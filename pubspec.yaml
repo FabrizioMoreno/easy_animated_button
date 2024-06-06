@@ -1,8 +1,7 @@
-name: awesome_dialog
+name: easy_animated_button
 description: >-
-  Flutter package to show beautiful dialogs(INFO,QUESTION,WARNING,SUCCESS,ERROR) with animations as simply as possible.
+  Flutter package to show easy animated buttons
 version: 3.2.1
-homepage: https://github.com/marcos930807/awesomeDialogs
 
 environment:
   sdk: ">=2.12.0 <3.2.0"
