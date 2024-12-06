@@ -7,12 +7,14 @@ class EasyAnimatedButton extends StatefulWidget {
     this.resetAnimation = const Duration(seconds: 1), this.buttonHeight = 50.0,
     this.successIcon = Icons.check, this.failureIcon = Icons.close, this.buttonWidth = 50.0,
     required this.buttonText, this.successIconColor = Colors.white,this.failureIconColor = Colors.white,
+    this.textColor = Colors.white
   }) : super(key: key);
 
   Future<bool?> Function() onButtonPressed;
   Future<void> Function() onSuccessful;
   Future<void> Function() onFailure;
   Color successColor;Color failureColor;Color defaultColor;
+  Color textColor;
   bool processSuccessful; String buttonText;
   Duration animationDuration; Duration delayDuration;Duration resetAnimation;
   double buttonHeight;double buttonWidth;
@@ -82,9 +84,9 @@ class _EasyAnimatedButtonState extends State<EasyAnimatedButton> with TickerProv
             } : null,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child:Center(child:  textAnimation.value < 8 ? const CircularProgressIndicator(color: Colors.white,)
+              child:Center(child:  textAnimation.value < 8 ? CircularProgressIndicator(color: widget.textColor)
                   : processSuccessful == null ?  Text('Iniciar Sesión',
-                  style: TextStyle(fontSize: textAnimation.value, color: Colors.white)) : (processSuccessful!?
+                  style: TextStyle(fontSize: textAnimation.value, color: widget.textColor)) : (processSuccessful!?
               Icon(widget.successIcon, color: widget.successIconColor,) :
               Icon(widget.failureIcon, color: widget.failureIconColor,))
               ),
